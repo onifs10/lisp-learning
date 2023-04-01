@@ -1,3 +1,9 @@
+; the syntax is this language is written in the polish notation order, where you have the
+; operator followed by the operand 
+; operator ....operand
+; eg 2 + 4 is written as + 2 4 
+
+
 ; basic expression (oprator ....oprands)
 (+ 2 2)
 
