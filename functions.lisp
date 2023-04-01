@@ -9,14 +9,23 @@
 |#
 ;1. example with hello world 
 (defun hello-world () 
-  (print "hello world!" ))
+  "this function would print hello world"
+  (print "hello world!")
+  (print "next line")
+)
 ; executing the function (call the function)
 (hello-world)
 
 
 ;2. adding arguments to function
-(defun hello (name) "Say hello to `name'." (format t"hello ~a !~&" name))
-(hello "Boluwatife")
+(defun hello (name)
+  "Say hello to `name'." 
+  (format t"hello ~a !~&" name)
+)
+
+(+ 2 4)
+; operator  operand
+(hello  "Mariam")
 
 
 ;3 .  defining optional arguments
@@ -28,13 +37,19 @@
  ;check if gender was added
  (when gender (format t"i am a ~a ~&" gender) )
 )
-(hello2 "ade")
 
+; if (condition)  (firstExpression)  (ElseRxpression)
+
+(hello2 "ade" 10 "male")
 
 ;4. add argument name to function , so u dont have ro remember the order arguments
-(defun hello3 (name &key happy) "If `happy' is `t', print a smiley" (format t"hello ~a !~&" name) (when happy (format t ":)~&")))
+(defun hello3 (name &key happy) 
+  "If `happy' is `t', print a smiley" 
+  (format t"hello ~a !~&" name) 
+  (when happy (format t ":)~&"))
+)
 
-(hello3 "bolu" :happy NIL)
+(hello3 "bolu" :happy t)
 
 
 ;5. (bonus) we can choose the keys programically 
@@ -46,13 +61,14 @@
 
 
 ;7 defining a default value for optional arguments
-(defun hello-default (name &optional (age 10 ) (gender "female"))
+(defun hello-default (name &optional (age 10) (gender "female"))
  "We added optional arguments to this function"
  (format t"hello ~a !~&" name)
   (format t"i am ~a years of age ~&" age)
   (format t"i am a ~a ~&" gender) 
 )
-(hello-default "ade")
+
+(hello-default "ade" 30)
 
 
 ; 8. using &rest (note: this is similar to the spread operator in js)
